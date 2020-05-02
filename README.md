@@ -1,3 +1,2 @@
-# go
-test
-...
+# go test
+
