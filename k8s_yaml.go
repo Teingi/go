@@ -23,7 +23,7 @@ func main() {
 		conf   *rest.Config
 		client *kubernetes.Clientset
 	)
-	if data, err = ioutil.ReadFile("/Users/5bug/codes/projects/k8s-demo/k8s-test.yaml"); err != nil {
+	if data, err = ioutil.ReadFile("~/projects/demo/k8s-test.yaml"); err != nil {
 		fmt.Print(err)
 	}
 	if data, err = yaml2.ToJSON(data); err != nil {
@@ -36,7 +36,7 @@ func main() {
 	cluster := deployment.ObjectMeta.ClusterName
 	namespace := deployment.ObjectMeta.Namespace
 	deploymentName := deployment.ObjectMeta.Name
-	if conf, err = clientcmd.BuildConfigFromFlags("", "/Users/5bug/.kube/config"); err != nil {
+	if conf, err = clientcmd.BuildConfigFromFlags("", "~.kube/config"); err != nil {
 		log.Println("BuildConfigFromFlags", err)
 		return
 	}
